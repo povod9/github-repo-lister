@@ -1,4 +1,10 @@
 package com.povod9.task;
 
-public record ErrorMessage() {
+import lombok.Builder;
+
+@Builder
+public record ErrorMessage(
+        int status,
+        String message
+) {
 }
