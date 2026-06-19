@@ -1,3 +1,7 @@
 spring:
   application:
     name: task
+
+github:
+  api:
+    url: https://api.github.com
