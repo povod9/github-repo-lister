@@ -7,7 +7,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class GitHubClientServiceImpl implements GitHubClientService{
+class GitHubClientServiceImpl implements GitHubClientService{
 
     private final GitHubClient client;
 
@@ -19,7 +19,9 @@ public class GitHubClientServiceImpl implements GitHubClientService{
                             return GitHubRepoResponse.builder()
                                     .repoName(repo.name())
                                     .login(repo.owner().login())
-                                    .branches(client.branchList(username, repo.name()))
+                                    .branches(client.branchList(username, repo.name()).stream()
+                                            .map(b -> new GitHubRepoResponse.BranchResponse(b.name(), b.commit().sha()))
+                                            .toList())
                                     .build();
                 }
                 ).toList();

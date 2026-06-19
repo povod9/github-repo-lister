@@ -1,8 +1,8 @@
 package com.povod9.task;
 
-public record GitHubBranchInfo(
+record GitHubBranchInfo(
         String name,
         Commit commit
 ) {
-    public record Commit(String sha){}
+    record Commit(String sha){}
 }

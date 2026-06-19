@@ -7,5 +7,7 @@ import java.util.List;
 public record GitHubRepoResponse(
         String repoName,
         String login,
-        List<GitHubBranchInfo> branches
-){}
+        List<BranchResponse> branches
+){
+    public record BranchResponse(String name, String lastCommitSha) {}
+}

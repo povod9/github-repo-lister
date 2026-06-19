@@ -1,9 +1,9 @@
 package com.povod9.task;
 
-public record GitHubRepoInfo(
+record GitHubRepoInfo(
         String name,
         boolean fork,
         Owner owner
 ) {
-    public record Owner(String login){}
+    record Owner(String login){}
 }
