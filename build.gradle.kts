@@ -25,6 +25,7 @@ dependencies {
 	testCompileOnly("org.projectlombok:lombok")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 	testAnnotationProcessor("org.projectlombok:lombok")
+	testImplementation("org.wiremock:wiremock-standalone:3.3.1")
 }
 
 tasks.withType<Test> {
