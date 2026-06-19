@@ -1,4 +1,8 @@
 package com.povod9.task;
 
-public class GitHubClientService {
+import java.util.List;
+
+public interface GitHubClientService {
+
+    List<GitHubRepoResponse> listOfRepos(String username);
 }
